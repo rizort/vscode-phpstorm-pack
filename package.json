@@ -1,0 +1,49 @@
+{
+  "name": "php-pack",
+  "displayName": "PHP Pack",
+  "description": "Recommended extensions for our team",
+  "version": "1.0.0",
+  "publisher": "rizort",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": ["Extension Packs"],
+  "extensionPack": [
+    "rizort.light-theme-109",
+    "chadalen.vscode-jetbrains-icon-theme",
+    "xdebug.php-debug",
+    "bmewburn.vscode-intelephense-client",
+    "laravel.vscode-laravel",
+    "amiralizadeh9480.laravel-extra-intellisense",
+    "onecentlin.laravel-blade",
+    "open-southeners.laravel-pint",
+    "muath-ye.composer-intelephense",
+    "eamodio.gitlens",
+    "github.copilot-chat"
+  ],
+  "contributes": {
+    "configurationDefaults": {
+      // Отключаем встроенную проверку, чтобы не мешала Intelephense
+      "php.validate.enable": false,
+      "php.suggest.basic": false,
+
+      // Настройка форматирования для Blade-шаблонов
+      "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter",
+        "editor.formatOnSave": true
+      },
+
+      // Автоматическое исправление стиля кода при сохранении через Laravel Pint
+      "laravel-pint.enable": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.laravel-pint": "explicit"
+      },
+
+      // Путь к PHP (обязательно для работы Language Server)
+      "php.executablePath": "/usr/bin/php", // Или путь к php.exe на Windows
+
+      // Улучшение работы с путями в Laravel
+      "laravel-extra-intellisense.basePathForCode": "resources/views"
+    }
+  },
+}
