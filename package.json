@@ -1,49 +1,45 @@
 {
-  "name": "php-pack",
-  "displayName": "PHP Pack",
-  "description": "Recommended extensions for our team",
+  "name": "phpstorm-pack-109",
+  "displayName": "PhpStorm Pack 109",
+  "description": "Recommended extensions",
   "version": "1.0.0",
   "publisher": "rizort",
   "engines": {
     "vscode": "^1.109.0"
   },
   "categories": ["Extension Packs"],
+  "icon": "icon.png",
   "extensionPack": [
-    "rizort.light-theme-109",
+    "rizort.phpstorm-light-theme-109",
     "chadalen.vscode-jetbrains-icon-theme",
+    "mrchetan.phpstorm-parameter-hints-in-vscode",
+    "phiter.phpstorm-snippets",
     "xdebug.php-debug",
     "bmewburn.vscode-intelephense-client",
-    "laravel.vscode-laravel",
-    "amiralizadeh9480.laravel-extra-intellisense",
-    "onecentlin.laravel-blade",
-    "open-southeners.laravel-pint",
     "muath-ye.composer-intelephense",
     "eamodio.gitlens",
+    "dotenv.dotenv-vscode",
+    "ms-vscode.makefile-tools",
     "github.copilot-chat"
   ],
   "contributes": {
     "configurationDefaults": {
-      // Отключаем встроенную проверку, чтобы не мешала Intelephense
       "php.validate.enable": false,
       "php.suggest.basic": false,
 
-      // Настройка форматирования для Blade-шаблонов
-      "[blade]": {
-        "editor.defaultFormatter": "shufo.vscode-blade-formatter",
-        "editor.formatOnSave": true
-      },
+      "php.executablePath": "/usr/bin/php",
 
-      // Автоматическое исправление стиля кода при сохранении через Laravel Pint
-      "laravel-pint.enable": true,
-      "editor.codeActionsOnSave": {
-        "source.fixAll.laravel-pint": "explicit"
-      },
-
-      // Путь к PHP (обязательно для работы Language Server)
-      "php.executablePath": "/usr/bin/php", // Или путь к php.exe на Windows
-
-      // Улучшение работы с путями в Laravel
-      "laravel-extra-intellisense.basePathForCode": "resources/views"
+      "phpParameterHint.hintOnlyLine": false,
+      "editor.inlayHints.fontSize": 11,
+      "editor.inlayHints.fontFamily": "JetBrains Mono",
+      "workbench.colorCustomizations": {
+        "editorInlayHint.foreground": "#777777",
+        "editorInlayHint.background": "#f5f5f5"
+      }
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rizort/vscode-phpstorm-pack"
+  }
 }
